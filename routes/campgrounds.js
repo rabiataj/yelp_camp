@@ -111,10 +111,10 @@ function ckeckCampgroundOwnership(req, res, next){
                 console.log(err);
                 res.redirect("back");
             }else {
-
-                if(foundCampground.author.id === req.user._id) {
-                    console.log(foundCampground.author.id);
-                    console.log(req.user._id);
+                let foundCampgroundId = (foundCampground.author.id).toString();
+                let userId = (req.user._id).toString();
+                if(foundCampgroundId === userId) {
+                    console.log("here");
                     next();
                 }else {
                     res.redirect("back");
