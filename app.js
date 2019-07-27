@@ -1,3 +1,6 @@
+require('dotenv').config();
+var validate = require('json-schema').validate
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),

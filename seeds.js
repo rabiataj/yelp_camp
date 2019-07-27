@@ -30,8 +30,8 @@ async function seedDB(){
           var campground   =  await   Campground.create(seed)
                 campground.comments.push(   await Comment.create(
                     {
-                        text: "This place is great, but I wish there was internet",
-                        author: "Homer"
+                        author: "Homer",
+                        text: "This place is great, but I wish there was internet"
                     }));
                await campground.save();
             })

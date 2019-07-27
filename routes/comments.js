@@ -51,13 +51,19 @@ router.get("/:comment_id/edit", function(req,res){
 });
 
 //COMMENT UPDATE ROUTE
-router.put("/:comment_id", function(req, res){
-  Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
-      if(err){
-          res.redirect("back");
-      }else{
+router.put("/:comment_id", async  function(req, res){
+   await Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment)
           res.redirect("/campgrounds/" + req.params.id);
-      }
+
+  });
+//DESTROY ROUTES
+router.delete("/:comment_id", function(req,res){
+  Comment.findByIdAndRemove(req.params.comment_id, function(err){
+     if(err){
+         res.redirect("back");
+     }else {
+         res.redirect("/campgrounds/" + req.params.id);
+     }
   });
 });
 
