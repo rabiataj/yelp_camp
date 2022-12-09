@@ -12,7 +12,7 @@
     "body-parser": "^1.14.1",
     "dotenv": "^8.0.0",
     "ejs": "^2.3.4",
-    "express": "^4.13.3",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "json-schema": "https://github.com/kriszyp/json-schema/tarball/master",
     "method-override": "^3.0.0",
